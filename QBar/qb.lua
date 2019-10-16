@@ -30,6 +30,7 @@ local slots = {
 	"HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot", "Trinket0Slot", "Trinket1Slot",
 	"MainHandSlot", "SecondaryHandSlot",
 };
+local IS_RETAIL = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 -- Config
 local cfg;
@@ -208,6 +209,12 @@ function qb:SetEnabledStatus()
 	else
 		self:UnregisterAllEvents();
 		self:Hide();
+	end
+end
+
+if not IS_RETAIL then
+	function GetContainerItemQuestInfo()
+		return nil
 	end
 end
 
