@@ -1,0 +1,7 @@
+## Interface: 80000
+## Version: 18.07.29
+## Title: QBar
+## Author: Aezay (Earthen Ring EU)
+## Notes: Dynamic Button Bar of Usable Quest Items in Your Bags
+## SavedVariablesPerCharacter: QBar_Config
+qb.lua

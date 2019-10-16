@@ -1,0 +1,112 @@
+QBar Changes | 2018 Jul 29
+--------------------------
+- Updated the TOC version to 80000 for the Battle for Azeroth 8.0 pre-patch.
+- Renamed "core.lua" to "qb.lua".
+
+QBar Changes | 2016 Jul 23
+--------------------------
+- TOC version updated to 70000 for the Legion 7.0.3 pre-patch.
+- Fixed an API change that was obtaining the localized "Quest" string.
+- Fixed another API change related to CooldownFrame_SetTimer -> CooldownFrame_Set. Thanks Gaddor.
+
+QBar Changes | 2013 Mar 21
+--------------------------
+- Changed the TOC version to 50200 for the 5.2 patch.
+- Corrected the command line help text given for the "/qb add" command. It suffered from a copy/paste error and had the same text as "/qb clearignore".
+
+QBar Changes | 2012 Oct 04
+--------------------------
+- Updated the changed return position of the localised "Quest" string from the GetAuctionItemClasses() function (was 12, now 10).
+- Fixed an error that would occur when the GetContainerItemLink() function didn't return a true "item:<id>" itemlink. It seemed to sometimes return "battlepet" links. This change might cause some items not to be picked up as before.
+
+QBar Changes | 2012 Aug 30
+--------------------------
+- Changed the TOC version to 50001 for the 5.0 Mists of Pandaria patch.
+- Removed the "RangedSlot" equipment slot.
+
+QBar Changes | 2010 Dec 05
+--------------------------
+- Should now work better on non-English clients. This was done by gathering the localized "Quest" text from the 12th parameter of the GetAuctionItemClasses() function.
+- Fixed the "/qb lock" slash command, locking QBar intially, instead of unlocking.
+- Changed the "VARIABLE_LOADED" event with "ADDON_LOADED".
+- Added "/qbar" as an alternative, to the already existing "/qb" slash command.
+- Fixed an issue with the equipped gear scan not respecting the ignore list.
+
+QBar Changes | 2010 Nov 08
+--------------------------
+- You can now properly ignore quest starter items again.
+- Adding custom items to the bar is now possible. Use the new slash command "/qb add <itemlink>" to do so. To remove an item again, just shift click the item on the bar.
+- New slash command "/qb clearuser" to clear the custom user list, from items added through the new "/qb add" slash command.
+- It's now possible to overwrite QBar's old keybind. This used to be somewhat of a bug/coding error on my part.
+- Now remembers the last used item between sessions.
+- The ignore list is now stored using the item ID, rather than item name. This has the unfortunate side effect that your ignore list will be wiped.
+- Button "count" text now uses normal font, instead of number font.
+- Now uses a more localized way of determining a quest item, instead of just using "Quest". This means it should be more compatible with non English clients.
+- Minor code cleanup and optimisations.
+
+QBar Changes | 2010 Oct 22
+--------------------------
+- Changed the TOC version to 40000 for the 4.0.1 pre Cataclysm patch.
+- Items that starts a quest are now detected using the GetContainerItemQuestInfo() function.
+- Added a few items to the list of items that should be treated as quest items.
+
+QBar Changes | 2010 Feb 27
+--------------------------
+- Changed the TOC version to 30300 for the 3.3 patch.
+- Removed global pollution of the name "button".
+- Items which starts a quest should now be detected better.
+
+QBar Changes | 2009 Mar 08
+--------------------------
+- Added a mirrored anchor direction option, use the slash command "/qb mirror" to toggle it.
+- You can now set the unit size of the item buttons using the command "/qb size <value>", default is 36. This option is not new, I had previously removed it when I added the scaling option.
+- The item tooltip is now a little more intelligent and should not block the buttons any longer, no matter what corner of the screen you put QBar.
+- Zone items should now properly update after you re-enter an instance from a corpse run.
+- New slash command to reset the QBar frame to the middle of the screen in the case of it having been pushed off screen. The command is "/qb reset".
+- Did a little code cleanup.
+
+QBar Changes | 2009 Feb 20
+--------------------------
+- Usable zone items will now be shown on the bar. An example would be the flying drake's essence in The Oculus instance.
+- Some items which starts a quest are now included onto the bar.
+- If only one item is shown, the assigned hotkey will automatically become bound.
+- Since some quest items are not marked as being so by WoW, I've added a custom table that forces any itemid in it, to be included no matter what. So if you find a quest item that isn't shown, please let me know which one it is, and I will add it to this list for the following releases.
+
+QBar Changes | 2008 Nov 09
+--------------------------
+- Changed the TOC version to 30000 for the Wrath of the Lich King patch.
+- Settings are now saved per character.
+- The ignore list is now remembered between sessions.
+- Fixed the "/qb toggle" slash command.
+
+QBar Changes | 2008 May 01
+--------------------------
+- Added an "update throttle" to avoid lag when receiving several events at the same time.
+- New slash command to lock and unlock the button frame. The border which used to show before is now only visible when unlocked. Use "/qb lock" to toggle the lock.
+- You can now link items into chat as well as trying out the item in the dress up frame by using the normal modifier keys for those actions.
+- Added back the "UNIT_INVENTORY_CHANGED" event, otherwise equipable items would not get removed from the button bar when you completed or abandoned the quest.
+- Previously, not all quest items got included on the bar, this was due to some items not having the text "Quest Item" in the tooltip. Now it should properly include all items as one would expect.
+
+QBar Changes | 2008 Apr 12
+--------------------------
+- I've renamed the addon to "QBar" as I like that better than "QButtons".
+- Removed the size slash command "/qb size <value>" in favor of a scaling option using the command "/qb scale <value>".
+- Added a padding option to set how much space there should be between buttons, use "/qb padding <value>" to set.
+- You can now set a hotkey to the last item that was used. Use the slash command "/qb bind" to set the key binding.
+- The buttons should now properly update when you leave combat.
+- Fixed a bug where the cooldown frames could be shown on the wrong button if some of the objects on the bar changed position.
+- Shift clicking an item now ignores it for the reminder of the session. Use the command "/qb clearignore" to show all ignored items again.
+- Removed the "UNIT_INVENTORY_CHANGED" event, not needed as all gear change invoke "BAG_UPDATE" anyway.
+- Changed frame strata to medium to allow other frames to show above it.
+
+QButtons Changes | 2008 Apr 09
+------------------------------
+- Should now work on localised versions of WoW, let me know if I am wrong.
+- Added cooldown frames to the buttons.
+- New slash command to change the size of the buttons, use "/qb size <value>" to do so.
+- You can now turn off tips showing on button mouseover with the slash command "/qb tips".
+- There is now an option to turn the bar growth to vertical, instead of the normal horizontal, use the command "/qb vertical" to toggle.
+
+QButtons Changes | 2008 Apr 06
+------------------------------
+- First Release.
