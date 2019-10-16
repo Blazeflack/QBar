@@ -1,3 +1,8 @@
+QBar Changes | 2019 Oct 16
+--------------------------
+- Updated toc version to 11302 for Classic.
+- Fixed error on Classic due to missing method.
+
 QBar Changes | 2018 Jul 29
 --------------------------
 - Updated the TOC version to 80000 for the Battle for Azeroth 8.0 pre-patch.
